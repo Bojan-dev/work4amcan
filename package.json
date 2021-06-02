@@ -1,0 +1,20 @@
+{
+  "name": "work4amcan",
+  "version": "1.0.0",
+  "description": "Website for the AmCan company to find a new employees",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bojan-dev/work4amcan.git"
+  },
+  "author": "Bojan Vreco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bojan-dev/work4amcan/issues"
+  },
+  "homepage": "https://github.com/Bojan-dev/work4amcan#readme"
+}
