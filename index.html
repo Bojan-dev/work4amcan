@@ -11,29 +11,80 @@
       rel="stylesheet"
     />
     <script defer src="./src/js/controller.js"></script>
+    <script
+      defer
+      src="./node_modules/@fortawesome/fontawesome-free/js/all.js"
+    ></script>
     <title>Work4AmCan</title>
   </head>
   <body>
-    <div class="container-left">
-      <div class="container-left__wrapper">
+    <header>
+      <nav>
         <img src="./src/img/website-logo.png" alt="AmCan logo" />
-        <h1>Great opportunity to build your career</h1>
-        <div class="red-line"></div>
-        <p>
-          Find yourself a job in a fast-growing company that is more than 10
-          years in the transportation business. Only four clicks separates you
-          from that. Choose a region you would like to work on:
-        </p>
-
-        <div class="container-left__btns">
-          <button class="btn">Illianois</button>
-          <button class="btn">Florida</button>
-          <button class="btn">Over the Road</button>
+        <div class="contact-phone">
+          <i class="fas fa-2x fa-phone-alt"></i>
+          <p>847-699-2277</p>
         </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="container-left">
+        <div class="container-left__wrapper">
+          <h1>Great opportunity to build your career</h1>
+          <div class="red-line"></div>
+          <p>
+            Find yourself a job in a <span class="to-red"> fast-growing</span>
+            company that is more than 10 years in the transportation business.
+            Only four clicks separates you from that. Choose a region you would
+            like to work on:
+          </p>
+
+          <div class="container-left__btns">
+            <button class="btn">
+              Illianois
+              <img
+                id="skyscraper-icon"
+                width="50px"
+                height="130px"
+                src="./src/img/skyscraper-icon.png"
+                alt="Skyscraper icon"
+              />
+            </button>
+            <button class="btn">
+              Florida
+              <img
+                width="110px"
+                height="110px"
+                src="./src/img/palm-trees.png"
+                alt="Skyscraper icon"
+              />
+            </button>
+            <button class="btn">
+              Over the Road
+              <img
+                width="85px"
+                height="110px"
+                src="./src/img/over-the-road.png"
+                alt="Skyscraper icon"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="background-lines"></div>
       </div>
-      <div class="background-lines"></div>
+      <div class="container-right">
+        <img
+          id="first-page-background"
+          src="./src/img/first-page-background.png"
+          alt="A truck following the road marks"
+        />
+      </div>
+      <div id="current-page-bar">
+        <p id="current-page">01&ThinSpace;<sup>/&ThinSpace;04</sup></p>
+        <div><div></div></div>
+        <p>Choose working location</p>
+      </div>
     </div>
-    <div class="container-right"></div>
   </body>
 </html>
 <!-- <svg class="icon">

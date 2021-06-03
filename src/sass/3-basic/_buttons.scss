@@ -7,15 +7,33 @@ button {
   font-size: 1.5rem;
   cursor: pointer;
   transition: 1s transform;
+  position: relative;
 
   &:hover {
     transform: scale(1.05);
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+    display: block;
+    max-width: 95px;
+    max-height: 110px;
+    width: auto;
+    height: auto;
+  }
+
+  #skyscraper-icon {
+    max-height: 125px;
+    bottom: -5px;
+    transform: translateX(-50%);
   }
 }
 
 .container-left {
   &__btns {
-    margin-top: 4.375em;
+    margin-top: 4em;
     .btn {
       background: var(--secondary-red);
       width: 100%;

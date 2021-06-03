@@ -1,3 +1,6 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
 *,
 *::before,
 *::after {
@@ -7,20 +10,52 @@
 }
 
 html {
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100vw;
 }
 
 body {
   font-family: 'IBM Plex Sans';
-  width: 100vw;
-  height: fit-content;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .icon {
   width: 50px;
   height: 50px;
   margin: 0.5em;
+}
+
+header {
+  padding: 0 6.75%;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+  margin-top: 3.125em;
+
+  nav {
+    @include mix.displayFlex(space-between, center);
+  }
+
+  .contact-phone {
+    @include mix.displayFlex(flex-end, center);
+
+    svg path {
+      fill: var(--main-blue);
+    }
+  }
+
+  img {
+    width: 125px;
+  }
+
+  p {
+    margin-left: 1em;
+    font-size: 1.25em;
+  }
+}
+
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
 }

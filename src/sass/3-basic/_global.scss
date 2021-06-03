@@ -3,26 +3,36 @@
 
 .container-left,
 .container-right {
-  padding-top: 3.125em;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 5em;
 }
 
 .container-left {
   background: var(--main-blue);
   color: white;
-  height: 100%;
-  position: relative;
+  overflow-y: hidden;
+  padding-top: 10vh;
   z-index: 2;
+
+  p {
+    color: white;
+  }
 
   &__wrapper {
     width: 80%;
     margin: auto;
-    height: 100vh;
+    height: fit-content;
     padding: 0 1.5em;
-
-    img {
-      width: 125px;
-    }
   }
+
+  .to-red {
+    color: var(--secondary-red);
+  }
+}
+
+.container-right {
+  z-index: 3;
 }
 
 .red-line {

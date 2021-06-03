@@ -1,0 +1,29 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
+#current-page-bar {
+  position: absolute;
+  right: 5%;
+  bottom: 4.5em;
+  @include mix.displayFlex(center, flex-end);
+  flex-direction: column;
+
+  #current-page {
+    font-size: 1.5rem;
+  }
+
+  div {
+    width: 15vw;
+    height: 10px;
+    background: #e7e7e7;
+    border-radius: 50px;
+    margin: 0.9375em 0;
+    display: flex;
+    align-items: center;
+
+    div {
+      width: 25%;
+      background: var(--secondary-red);
+    }
+  }
+}
