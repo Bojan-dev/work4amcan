@@ -1,0 +1,33 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
+.container-left,
+.container-right {
+  padding-top: 3.125em;
+}
+
+.container-left {
+  background: var(--main-blue);
+  color: white;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+
+  &__wrapper {
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    padding: 0 1.5em;
+
+    img {
+      width: 125px;
+    }
+  }
+}
+
+.red-line {
+  width: 100px;
+  height: 2px;
+  background: var(--secondary-red);
+  margin: 1.5625em 0 2.8125em 0;
+}

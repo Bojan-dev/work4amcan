@@ -1,0 +1,26 @@
+@use '../1-helpers/colors';
+
+button {
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 1s transform;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.container-left {
+  &__btns {
+    margin-top: 4.375em;
+    .btn {
+      background: var(--secondary-red);
+      width: 100%;
+      margin: 0.625em 0;
+      padding: 1.25em 0;
+    }
+  }
+}

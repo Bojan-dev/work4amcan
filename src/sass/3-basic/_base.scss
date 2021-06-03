@@ -1,17 +1,26 @@
-@use '../1-helpers/variables' as var;
-
-:root {
-  --blue-main: #1c2e58;
-  --red-second: #eb2123;
-}
-
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 html {
   overflow: hidden;
+  width: 100vw;
+}
+
+body {
+  font-family: 'IBM Plex Sans';
+  width: 100vw;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0.5em;
 }
