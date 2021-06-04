@@ -1,0 +1,22 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
+#more-about-company {
+  z-index: 5;
+  position: absolute;
+  @include mix.displayFlex(center, center);
+  flex-direction: column;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  p {
+    color: white;
+    margin-bottom: 1em;
+  }
+
+  button {
+    background: var(--secondary-red);
+    padding: 0.75em 2em;
+  }
+}
