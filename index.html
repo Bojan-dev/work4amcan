@@ -20,7 +20,12 @@
   <body>
     <header>
       <nav>
-        <img src="./src/img/website-logo.png" alt="AmCan logo" />
+        <img
+          width="150px"
+          height="100px"
+          src="./src/img/website-logo.png"
+          alt="AmCan logo"
+        />
         <div class="contact-phone">
           <i class="fas fa-2x fa-phone-alt"></i>
           <p>847-699-2277</p>
@@ -40,7 +45,7 @@
           </p>
 
           <div class="container-left__btns">
-            <button class="btn">
+            <button class="btn choose-option">
               Illianois
               <img
                 id="skyscraper-icon"
@@ -50,7 +55,7 @@
                 alt="Skyscraper icon"
               />
             </button>
-            <button class="btn">
+            <button class="btn choose-option">
               Florida
               <img
                 width="110px"
@@ -59,7 +64,7 @@
                 alt="Skyscraper icon"
               />
             </button>
-            <button class="btn">
+            <button class="btn choose-option">
               Over the Road
               <img
                 width="85px"
@@ -88,6 +93,20 @@
         <p>Company info:</p>
         <button><i class="fas fa-info"></i></button>
       </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <div id="company-info-container" class="hidden">
+      <div id="header">
+        <div>
+          <img src="./src/img/website-logo.png" alt="AmCan logo" />
+          <h3>AmCan Freight</h3>
+        </div>
+        <div id="close-overlay">
+          <div></div>
+        </div>
+      </div>
+      <div id="company-info-body"></div>
     </div>
   </body>
 </html>

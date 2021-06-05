@@ -10,7 +10,14 @@ h1 {
 p {
   font-size: 1.125rem;
   font-weight: 300;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.025em;
   line-height: 1.5em;
   color: var(--clr-text);
+}
+
+h3 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.875rem;
+  font-weight: 500;
 }

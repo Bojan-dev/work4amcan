@@ -8,6 +8,8 @@ button {
   cursor: pointer;
   transition: 1s transform;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 
   &:hover {
     transform: scale(1.05);
@@ -26,7 +28,6 @@ button {
 
   #skyscraper-icon {
     max-height: 125px;
-    bottom: -5px;
     transform: translateX(-50%);
   }
 }

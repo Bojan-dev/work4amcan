@@ -17,15 +17,15 @@
       flex-direction: column;
       justify-content: space-between;
       &:first-of-type {
-        animation: topLineMove 10s infinite linear;
+        animation: topLineMove 7.5s infinite linear;
       }
 
       &:last-of-type {
-        animation: topLineMove 10s infinite linear;
+        animation: topLineMove 7.5s infinite linear;
       }
 
       &:nth-of-type(2) {
-        animation: topLineMove 5s infinite linear;
+        animation: topLineMove 3.75s infinite linear;
       }
     }
 
