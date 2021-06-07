@@ -43,6 +43,7 @@ class CompanyInfoView extends View {
     this.render();
     this._addHandlerShowWindow();
     this._addHandlerHideWindow();
+    this._addHandlerEscWindow();
   }
 
   _generateMarkup() {
@@ -67,6 +68,13 @@ class CompanyInfoView extends View {
     this._overlayWindow.classList.toggle('hidden');
   }
 
+  _toggleWindowEsc(e) {
+    if (e.key !== 'Escape' || this._overlay.classList.contains('hidden'))
+      return;
+
+    this._toggleWindow();
+  }
+
   _addHandlerShowWindow() {
     this._aboutCompanyBtn.addEventListener(
       'click',
@@ -78,6 +86,10 @@ class CompanyInfoView extends View {
     [this._closeWindow, this._overlay].forEach((el) => {
       el.addEventListener('click', this._toggleWindow.bind(this));
     });
+  }
+
+  _addHandlerEscWindow() {
+    document.addEventListener('keydown', this._toggleWindowEsc.bind(this));
   }
 }
 

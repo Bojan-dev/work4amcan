@@ -1,6 +1,6 @@
 import View from './View';
 
-class ChangePageView extends View {
+class SwitchPageView extends View {
   _btns = document.querySelectorAll('.choose-option');
 
   addHandlerClick(handler) {
@@ -8,12 +8,10 @@ class ChangePageView extends View {
       btn.addEventListener('click', function (e) {
         const btn = e.target;
 
-        console.log(btn);
-
         handler();
       });
     });
   }
 }
 
-export default new ChangePageView();
+export default new SwitchPageView();
