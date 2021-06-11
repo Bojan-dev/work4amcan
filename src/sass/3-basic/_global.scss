@@ -13,6 +13,7 @@
   color: white;
   overflow-y: hidden;
   padding-top: 10vh;
+  width: 50vw;
   z-index: 2;
 
   p {
@@ -33,6 +34,18 @@
 
 .container-right {
   z-index: 3;
+}
+
+.red-line-arrow {
+  @include mix.displayFlex(space-between, center);
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(5vw);
+  }
 }
 
 .red-line {

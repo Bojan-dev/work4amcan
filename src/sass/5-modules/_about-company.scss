@@ -114,6 +114,16 @@
   &:active {
     transform: scale(0.95);
   }
+
+  &:hover {
+    div {
+      background: rgb(255, 193, 193);
+
+      &::before {
+        background: rgb(255, 193, 193);
+      }
+    }
+  }
 }
 
 .hidden {

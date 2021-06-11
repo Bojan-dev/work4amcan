@@ -1,0 +1,29 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
+.third-page-right {
+  @include mix.rightSide;
+  @include mix.displayFlex(center, center);
+  flex-direction: column;
+}
+
+#driving-jobs-btns {
+  width: 100%;
+  @include mix.displayFlex(space-between, center);
+}
+
+#driving-jobs-body {
+  border: 1px solid #c7c7c7;
+  border-top: 0;
+  height: 250px;
+  width: 100%;
+  padding: 1em 2.1875em 2.1875em 2.1875em;
+
+  .job-title {
+    @include mix.displayFlex(flex-start, center);
+
+    img {
+      margin-left: 2.1875em;
+    }
+  }
+}

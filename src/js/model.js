@@ -3,7 +3,9 @@ export const state = {
   answers: [],
 };
 
-export const changePageNum = function () {
+export const changePage = function (answers) {
+  //Update curPage:
   state.curPage++;
-  console.log(state.curPage);
+  //Push page answers to the state.answers array:
+  state.answers.push(answers);
 };

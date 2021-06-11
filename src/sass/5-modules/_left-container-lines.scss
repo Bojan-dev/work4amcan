@@ -1,40 +1,38 @@
 @use '../1-helpers/mixins' as mix;
 
-.container-left {
-  .background-lines {
-    position: absolute;
+.background-lines {
+  position: absolute;
+  height: 100vh;
+  width: 40vw;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  @include mix.displayFlex(space-between, center);
+
+  .lines-handler {
     height: 100vh;
-    width: 80%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-    @include mix.displayFlex(space-between, center);
-
-    .lines-handler {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      &:first-of-type {
-        animation: topLineMove 7.5s infinite linear;
-      }
-
-      &:last-of-type {
-        animation: topLineMove 7.5s infinite linear;
-      }
-
-      &:nth-of-type(2) {
-        animation: topLineMove 3.75s infinite linear;
-      }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:first-of-type {
+      animation: topLineMove 7.5s infinite linear;
     }
 
-    .line {
-      width: 2px;
-      height: 25%;
-      background: white;
-      opacity: 0.15;
+    &:last-of-type {
+      animation: topLineMove 7.5s infinite linear;
     }
+
+    &:nth-of-type(2) {
+      animation: topLineMove 3.75s infinite linear;
+    }
+  }
+
+  .line {
+    width: 2px;
+    height: 25%;
+    background: white;
+    opacity: 0.15;
   }
 }
 
@@ -55,4 +53,3 @@
     transform: translateY(0);
   }
 }
-// animation: topLineMove 10s infinite linear;

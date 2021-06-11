@@ -41,6 +41,8 @@ header {
 
     svg path {
       fill: var(--main-blue);
+      transform: rotate3d(0, 0, 0, 0);
+      animation: phoneIcon 2000ms infinite;
     }
   }
 
@@ -60,4 +62,40 @@ header {
   width: 100vw;
   display: grid;
   grid-template-columns: 50vw 50vw;
+}
+
+@keyframes phoneIcon {
+  0% {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  5% {
+    transform: rotate3d(25px, 0, 0, 10deg);
+  }
+  10% {
+    transform: rotate3d(-25px, 0, 0, -10deg);
+  }
+  15% {
+    transform: rotate3d(25px, 0, 0, 10deg);
+  }
+  20% {
+    transform: rotate3d(-25px, 0, 0, -10deg);
+  }
+  25% {
+    transform: rotate3d(25px, 0, 0, 10deg);
+  }
+  30% {
+    transform: rotate3d(-25px, 0, 0, -10deg);
+  }
+  35% {
+    transform: rotate3d(25px, 0, 0, 10deg);
+  }
+  40% {
+    transform: rotate3d(-25px, 0, 0, -10deg);
+  }
+  45% {
+    transform: rotate3d(25px, 0, 0, 10deg);
+  }
+  50% {
+    transform: rotate3d(-25px, 0, 0, -10deg);
+  }
 }

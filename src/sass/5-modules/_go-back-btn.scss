@@ -1,0 +1,15 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
+#go-back-btn {
+  position: absolute;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  top: 22.5%;
+  left: 0;
+  background-color: var(--secondary-red);
+  z-index: 10;
+  color: white;
+  @include mix.displayFlex(center, center);
+}

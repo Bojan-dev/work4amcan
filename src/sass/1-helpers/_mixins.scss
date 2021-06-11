@@ -3,3 +3,9 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin rightSide {
+  display: grid;
+  place-items: center;
+  padding: 17.5vh 3.5vw;
+}
