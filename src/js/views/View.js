@@ -8,4 +8,8 @@ export default class View {
     this._parentElement.innerHTML = '';
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
+
+  updateCurrPage() {
+    this._currPage++;
+  }
 }

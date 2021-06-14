@@ -1,0 +1,20 @@
+@use '../1-helpers/colors';
+
+input {
+  border: none;
+  border-bottom: 1px solid #999999;
+  outline: none;
+  margin-top: 1.5625em;
+  font-size: 1.15rem;
+  font-weight: 300;
+
+  &::placeholder {
+    color: #999999;
+    font-weight: 300;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  &:focus {
+    border-color: var(--main-blue);
+  }
+}

@@ -2,12 +2,13 @@
 
 .background-lines {
   position: absolute;
+  pointer-events: none;
   height: 100vh;
+  overflow-y: hidden;
   width: 40vw;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
+  left: 5vw;
+  z-index: 9;
   @include mix.displayFlex(space-between, center);
 
   .lines-handler {
@@ -32,7 +33,7 @@
     width: 2px;
     height: 25%;
     background: white;
-    opacity: 0.15;
+    opacity: 0.1;
   }
 }
 

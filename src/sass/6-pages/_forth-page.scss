@@ -1,0 +1,39 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
+#form-truck-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-blend-mode: luminosity;
+  mix-blend-mode: luminosity;
+}
+
+.forth-page-right {
+  @include mix.rightSide;
+  @include mix.displayFlex(center, center);
+  flex-direction: column;
+
+  form {
+    width: 100%;
+    @include mix.displayFlex(flex-start, flex-start);
+    flex-direction: column;
+
+    div,
+    input {
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.375rem;
+    }
+  }
+
+  .form-field {
+    margin-bottom: 3.125em;
+  }
+
+  button {
+    margin-top: 1em;
+  }
+}

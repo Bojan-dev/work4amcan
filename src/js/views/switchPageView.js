@@ -7,7 +7,7 @@ class SwitchPageView extends View {
   _pageUI = document.querySelector('.container');
 
   addHandlerClick(handler) {
-    this._btnsContainer.addEventListener('click', function (e) {
+    this._btnsContainer.addEventListener('click', (e) => {
       const clicked = e.target.tagName.toLowerCase();
       if (clicked !== 'button' && clicked !== 'img') return;
       //Calling model function and pushing answer:
@@ -16,9 +16,19 @@ class SwitchPageView extends View {
       //Updating current page bar:
       currentPageBarView.updateCurrentPageBar();
       //Updating page UI:
-      updatePageUIView.pushPrevious();
       updatePageUIView.render();
+      this.updateCurrPage();
+      this._updateBtns(
+        `.container-left__btns`
+        // `${this._currPage > 1 ? `.container-left__btns` : `.submit-btn`}`
+      );
+      console.log(this._btnsContainer);
+      console.log(this._currPage);
     });
+  }
+
+  _updateBtns(btn) {
+    this._btnsContainer = document.querySelector(`${btn}`);
   }
 }
 
