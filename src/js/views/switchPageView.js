@@ -1,35 +1,43 @@
 import View from './View';
 import currentPageBarView from './currentPageBarView';
-import updatePageUIView from './updatePageUIView';
+import switchJobView from './switchJobView';
 
 class SwitchPageView extends View {
-  _btnsContainer = document.querySelector('.container-left__btns');
-  _pageUI = document.querySelector('.container');
+  _switchPageBtns = document.querySelectorAll('.next-page');
+  _allPages = Array.from(document.querySelectorAll('[data-pageNum]'));
 
   addHandlerClick(handler) {
-    this._btnsContainer.addEventListener('click', (e) => {
-      const clicked = e.target.tagName.toLowerCase();
-      if (clicked !== 'button' && clicked !== 'img') return;
-      //Calling model function and pushing answer:
-      const answer = e.target.closest('button').textContent.trim();
-      handler(answer);
-      //Updating current page bar:
-      currentPageBarView.updateCurrentPageBar();
-      //Updating page UI:
-      updatePageUIView.render();
-      this.updateCurrPage();
-      this._updateBtns(
-        `.container-left__btns`
-        // `${this._currPage > 1 ? `.container-left__btns` : `.submit-btn`}`
-      );
-      console.log(this._btnsContainer);
-      console.log(this._currPage);
+    this._switchPageBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        this._updatePage(e, handler);
+        this._toggleUIClass(this._currPage);
+      });
     });
   }
 
-  _updateBtns(btn) {
-    this._btnsContainer = document.querySelector(`${btn}`);
+  _toggleUIClass(page) {
+    return page <= 3
+      ? this._allPages.map((page) => page.classList.add('hidden')) &&
+          this._allPages[page].classList.remove('hidden')
+      : '';
+  }
+
+  _updatePage(e, handler) {
+    //Calling model function and pushing answer:
+    let answer;
+    if (this._currPage <= 1) {
+      answer = this.textContentTrim(e.target.closest('button'));
+    }
+    if (this._currPage === 2) answer = switchJobView.returnChosedJob();
+    if (this._currPage === 3) answer = 2;
+    handler(answer);
+    //Updating current page bar:
+    currentPageBarView.updateCurrentPageBar();
+    //Updating page number:
+    this.updateCurrPage();
   }
 }
 
 export default new SwitchPageView();
+
+// `${this._currPage > 1 ? `.container-left__btns` : `.submit-btn`}`

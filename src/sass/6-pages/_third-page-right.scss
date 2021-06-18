@@ -10,6 +10,7 @@
 #driving-jobs-btns {
   width: 100%;
   @include mix.displayFlex(space-between, center);
+  transition: 1s all;
 }
 
 #driving-jobs-body {
@@ -50,7 +51,7 @@
   height: 1px;
   width: 20px;
   background: var(--secondary-red);
-  margin: 1em 0 2em 0;
+  margin-bottom: 2em;
 }
 
 .job-each-description {

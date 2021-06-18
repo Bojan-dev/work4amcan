@@ -2,8 +2,8 @@ export default class View {
   _data;
   _currPage = 0;
 
-  render() {
-    const markup = this._generateMarkup();
+  render(content = '') {
+    const markup = this._generateMarkup(content);
 
     this._parentElement.innerHTML = '';
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
@@ -11,5 +11,9 @@ export default class View {
 
   updateCurrPage() {
     this._currPage++;
+  }
+
+  textContentTrim(el) {
+    return el.textContent.trim();
   }
 }

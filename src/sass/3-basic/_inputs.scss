@@ -4,9 +4,10 @@ input {
   border: none;
   border-bottom: 1px solid #999999;
   outline: none;
-  margin-top: 1.5625em;
+  margin-top: 1em;
   font-size: 1.15rem;
   font-weight: 300;
+  color: var(--clr-text);
 
   &::placeholder {
     color: #999999;
@@ -16,5 +17,7 @@ input {
 
   &:focus {
     border-color: var(--main-blue);
+    background: #eff4ff;
+    padding: 0.5em;
   }
 }
