@@ -1,5 +1,4 @@
 export default class View {
-  _data;
   _currPage = 0;
 
   render(content = '') {

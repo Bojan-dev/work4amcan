@@ -41,7 +41,7 @@ class SwitchJobView extends View {
     },
   ];
 
-  addHandlerClick(handler) {
+  addHandlerClick() {
     this._switchBtns.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const toSwitchBtn = this._btnsToSwitch.find(

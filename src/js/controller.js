@@ -5,12 +5,13 @@ import switchPageView from './views/switchPageView';
 import currentPageBarView from './views/currentPageBarView';
 import switchJobView from './views/switchJobView';
 import formValidationView from './views/formValidationView';
+import goBackBtnView from './views/goBackBtnView';
 
-function init() {
+const init = function () {
   switchPageView.addHandlerClick(model.changePage);
   switchJobView.addHandlerClick();
   formValidationView.addHandlerSubmit();
-}
+};
 
 init();
 
@@ -18,6 +19,3 @@ init();
 //   container.classList.add('hidden');
 //   container.style.height = '0';
 // });
-
-console.log(`cas`);
-console.log(isFinite(`dfsa`));

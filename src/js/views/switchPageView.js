@@ -1,6 +1,8 @@
 import View from './View';
 import currentPageBarView from './currentPageBarView';
 import switchJobView from './switchJobView';
+import goBackBtnView from './goBackBtnView';
+import formValidationView from './formValidationView';
 
 class SwitchPageView extends View {
   _switchPageBtns = document.querySelectorAll('.next-page');
@@ -25,16 +27,21 @@ class SwitchPageView extends View {
   _updatePage(e, handler) {
     //Calling model function and pushing answer:
     let answer;
-    if (this._currPage <= 1) {
+    if (this._currPage > 3) return;
+    if (this._currPage <= 1)
       answer = this.textContentTrim(e.target.closest('button'));
-    }
     if (this._currPage === 2) answer = switchJobView.returnChosedJob();
-    if (this._currPage === 3) answer = 2;
+    if (this._currPage === 3) {
+      const formValues = formValidationView.sendFormValues();
+      if (Object.keys(formValues).length === 0) return;
+      answer = formValues;
+    }
     handler(answer);
     //Updating current page bar:
     currentPageBarView.updateCurrentPageBar();
     //Updating page number:
     this.updateCurrPage();
+    goBackBtnView.updateCurrPage();
   }
 }
 
