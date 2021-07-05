@@ -18,3 +18,6 @@ init();
 //   container.classList.add('hidden');
 //   container.style.height = '0';
 // });
+
+console.log(`cas`);
+console.log(isFinite(`dfsa`));

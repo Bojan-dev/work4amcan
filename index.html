@@ -388,7 +388,7 @@
       <div class="container-right forth-page-right">
         <form action="submit">
           <div class="form-field">
-            <p>Name: *</p>
+            <label for="name-field">Name: *</label>
             <input
               id="name-field"
               type="text"
@@ -396,29 +396,38 @@
               onfocus="this.placeholder = ''"
               onblur="this.placeholder = 'Your name here'"
             />
+            <div class="bad-input-format hidden">
+              <p>Wrong naming format</p>
+            </div>
           </div>
           <div class="form-field">
-            <p>Phone number: *</p>
+            <label for="phone-field">Phone number: *</label>
             <input
               id="phone-field"
-              type="text"
+              type="tel"
               placeholder="Your phone number here"
               onfocus="this.placeholder = ''"
               onblur="this.placeholder = 'Your phone number here'"
             />
+            <div class="bad-input-format hidden">
+              <p>Wrong US phone format</p>
+            </div>
           </div>
           <div class="form-field">
-            <p>E-mail address: *</p>
+            <label for="mail-field">E-mail address: *</label>
             <input
               id="mail-field"
-              type="text"
+              type="email"
               placeholder="Your e-mail address here"
               onfocus="this.placeholder = ''"
               onblur="this.placeholder = 'Your e-mail address here'"
             />
+            <div class="bad-input-format hidden">
+              <p>Wrong e-mail format</p>
+            </div>
           </div>
           <div class="form-field">
-            <p>Message (optional):</p>
+            <label for="message-field">Message (optional):</label>
             <input
               id="message-field"
               type="text"
@@ -426,8 +435,11 @@
               onfocus="this.placeholder = ''"
               onblur="this.placeholder = 'Your message here'"
             />
+            <div class="bad-input-format hidden">
+              <p>Message can be only 250 characters long</p>
+            </div>
           </div>
-          <button class="submit-btn next-page">Submit</button>
+          <button type="submit" class="submit-btn next-page">Submit</button>
         </form>
       </div>
     </div>

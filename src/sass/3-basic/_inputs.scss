@@ -21,3 +21,9 @@ input {
     padding: 0.5em;
   }
 }
+
+.wrong-input {
+  border-bottom: 1px solid var(--secondary-red);
+  padding: 0.5em;
+  background: #fff0f0;
+}

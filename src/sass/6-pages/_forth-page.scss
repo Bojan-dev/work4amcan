@@ -24,13 +24,45 @@
       width: 100%;
     }
 
-    p {
+    label {
       font-size: 1.375rem;
+      font-weight: 300;
     }
   }
 
   .form-field {
+    position: relative;
+    width: 100%;
     margin-bottom: 3.125em;
+
+    .bad-input-format {
+      position: absolute;
+      background: var(--secondary-red);
+      top: 0;
+      right: 0;
+      padding: 0.25em 1em;
+      text-align: center;
+      width: fit-content;
+      border-radius: 10px;
+
+      p {
+        font-size: 1rem;
+        color: white;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        right: 10px;
+        transform: translateY(12px);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 12px solid var(--secondary-red);
+      }
+    }
   }
 
   button {
