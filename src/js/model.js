@@ -1,12 +1,17 @@
 export const state = {
-  curPage: 0,
+  currPage: 0,
   answers: [],
 };
 
-export const changePage = function (updatePage = 1, answers) {
-  //Update curPage:
-  updatePage === 1 ? state.curPage++ : state.curPage--;
+export const changePageNumber = function (pageDirection = 'up') {
+  //Update page number:
+  pageDirection === 'up' ? state.currPage++ : state.currPage--;
+};
+
+export const updateAnswers = function (answer) {
+  if (state.answers.length > 3) return;
+
   //Push page answers to the state.answers array:
-  state.answers.push(answers);
+  state.answers.push(answer);
   console.log(state.answers);
 };

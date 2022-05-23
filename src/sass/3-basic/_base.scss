@@ -26,12 +26,12 @@ body {
 }
 
 header {
-  padding: 0 6.75%;
+  padding: 2.5em 6.75% 2.5em 6.75%;
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 10;
-  margin-top: 2.5em;
+  z-index: 30;
+  transition: 0.5s ease-in-out all;
 
   nav {
     @include mix.displayFlex(space-between, center);
@@ -58,11 +58,29 @@ header {
   }
 }
 
+.header-update {
+  background: #e0f3ff;
+  padding: 0.5em 6.75% 0.5em 6.75%;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.09);
+}
+
 .container {
   position: relative;
   width: 100vw;
   display: grid;
   grid-template-columns: 50vw 50vw;
+}
+
+.center-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 33;
+  border-radius: 10px;
 }
 
 @keyframes phoneIcon {

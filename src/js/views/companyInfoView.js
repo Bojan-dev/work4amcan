@@ -2,11 +2,11 @@ import View from './View';
 
 class CompanyInfoView extends View {
   _parentElement = document.getElementById('company-info-body');
-  _aboutCompanyBtn =
-    document.getElementById('more-about-company').lastElementChild;
+  _openBtn = document.getElementById('more-about-company').lastElementChild;
   _closeWindow = document.getElementById('close-overlay');
   _overlay = document.querySelector('.overlay');
   _overlayWindow = document.getElementById('company-info-container');
+  _closingOptions = 2;
 
   _allInfo = [
     {
@@ -61,35 +61,6 @@ class CompanyInfoView extends View {
   <div class="separation-line"></div>`
       )
       .join('');
-  }
-
-  _toggleWindow() {
-    this._overlay.classList.toggle('hidden');
-    this._overlayWindow.classList.toggle('hidden');
-  }
-
-  _toggleWindowEsc(e) {
-    if (e.key !== 'Escape' || this._overlay.classList.contains('hidden'))
-      return;
-
-    this._toggleWindow();
-  }
-
-  _addHandlerShowWindow() {
-    this._aboutCompanyBtn.addEventListener(
-      'click',
-      this._toggleWindow.bind(this)
-    );
-  }
-
-  _addHandlerHideWindow() {
-    [this._closeWindow, this._overlay].forEach((el) => {
-      el.addEventListener('click', this._toggleWindow.bind(this));
-    });
-  }
-
-  _addHandlerEscWindow() {
-    document.addEventListener('keydown', this._toggleWindowEsc.bind(this));
   }
 }
 

@@ -9,27 +9,26 @@ class CurrentPageBarView extends View {
     `Fill the form`,
   ];
 
-  updateCurrentPageBar() {
-    if (this._currPage + 2 > 4) return;
-    this._currPage++;
-    this._updatePageNum();
-    this._updatePageName();
-    this._updatePageBar();
+  updateCurrentPageBar(currPage) {
+    if (currPage >= 4) return;
+    this._updatePageNum(currPage);
+    this._updatePageName(currPage);
+    this._updatePageBar(currPage);
   }
 
-  _updatePageNum() {
-    const currPage = this._parentElement.querySelector('span');
-    currPage.textContent = `0${+currPage.textContent.slice(1) + 1}`;
+  _updatePageNum(currPage) {
+    const textEl = this._parentElement.querySelector('span');
+    textEl.textContent = `0${currPage + 1}`;
   }
 
-  _updatePageName() {
+  _updatePageName(currPage) {
     const pageName = this._parentElement.lastElementChild;
-    pageName.textContent = this._allPages[this._currPage];
+    pageName.textContent = this._allPages[currPage];
   }
 
-  _updatePageBar() {
+  _updatePageBar(currPage) {
     const pageBar = this._parentElement.querySelector('div').firstElementChild;
-    pageBar.style.width = `${25 * (this._currPage + 1)}%`;
+    pageBar.style.width = `${25 * (currPage + 1)}%`;
   }
 }
 

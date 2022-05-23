@@ -1,0 +1,52 @@
+@use '../1-helpers/colors';
+@use '../1-helpers/mixins' as mix;
+
+.success-message {
+  background: var(--main-blue);
+  text-align: center;
+  @include mix.displayFlex(center, center);
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;
+  padding: 4.5% 5% 2% 5%;
+
+  #success-icon-container {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: #27ae60;
+    color: white;
+    padding: 1.5em;
+  }
+
+  div:last-of-type {
+    width: 25px;
+    height: 1px;
+    background: white;
+    border-radius: 5px;
+    margin: 1.5625em 0;
+  }
+
+  h3,
+  p {
+    word-wrap: break-word;
+    width: 75%;
+  }
+
+  h3 {
+    line-height: 150%;
+  }
+
+  p {
+    color: white;
+  }
+
+  button {
+    margin-top: 2em;
+    padding: 1em 0;
+    width: 50%;
+    background: #27ae60;
+    border-radius: 10px;
+  }
+}

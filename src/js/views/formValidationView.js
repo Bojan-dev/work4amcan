@@ -1,4 +1,5 @@
 import View from './View';
+import successfulJobAppView from './successfulJobAppView';
 
 class FormValidationView extends View {
   _form = document.querySelector('form');
@@ -11,10 +12,11 @@ class FormValidationView extends View {
   _regExPhone = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
   _regExMail =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  _workerData = {};
 
   constructor() {
     super();
+    this.addHandlerSubmit();
+    console.log(`Prvo ovo`);
     this._allInputs.forEach((input) =>
       input.addEventListener('focus', function (e) {
         e.target.classList.remove('wrong-input');
@@ -33,7 +35,7 @@ class FormValidationView extends View {
       if (this._nameField.value.length <= 1) this._showError(errors, this._nameField, 'Name has to be at least 2 characters long')
 
       //prettier-ignore
-      if(!this._regExPhone.test(this._phoneField.value)) this._showError(errors, this._phoneField, 'Please use a valid phone format: 10-11 digits')
+      if(!this._regExPhone.test(this._phoneField.value)) this._showError(errors, this._phoneField, 'Please use a valid phone format: 10-12 digits')
 
       //prettier-ignore
       if(!this._regExMail.test(this._mailField.value)) this._showError(errors, this._mailField, 'Please use valid e-mail format: example@mail.com')
@@ -41,13 +43,21 @@ class FormValidationView extends View {
       //prettier-ignore
       if(this._messageField.value.length > 200) this._showError(errors, this._messageField, `Message can't be longer then 200 characters`);
 
-
       if (errors.length > 0) {
         e.preventDefault();
         return;
       }
 
-      this._addFormValues();
+      //Adding values:
+      this.formValues = {
+        name: this._allInputs[0].value,
+        phone: this._allInputs[1].value,
+        mail: this._allInputs[2].value,
+        message: this._allInputs[3].value,
+      };
+
+      successfulJobAppView.toggleWindow();
+      e.preventDefault();
     });
   }
 
@@ -58,18 +68,24 @@ class FormValidationView extends View {
     field.classList.add(`wrong-input`);
   }
 
-  _addFormValues() {
-    this._workerData.name = this._allInputs[0].value;
-    this._workerData.phone = this._allInputs[1].value;
-    this._workerData.mail = this._allInputs[2].value;
-    this._allInputs[3].value.length > 0
-      ? (this._workerData.message = this._allInputs[3].value)
-      : '';
-  }
+  // _addFormValues() {
+  //   let messageVal;
+  //   const nameVal = this._allInputs[0].value;
+  //   const phoneVal = this._allInputs[1].value;
+  //   const mailVal = this._allInputs[2].value;
+  //   this._allInputs[3].value.length > 0
+  //     ? (messageVal = this._allInputs[3].value)
+  //     : '';
+  //   this.formValues = {
+  //     name: nameVal,
+  //     phone: phoneVal,
+  //     mail: mailVal,
+  //     message: messageVal,
+  //   };
+  // }
 
   sendFormValues() {
-    if (!this._workerData) return;
-    return this._workerData;
+    return this.formValues;
   }
 }
 

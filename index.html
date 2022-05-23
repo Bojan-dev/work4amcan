@@ -60,7 +60,7 @@
           </p>
 
           <div class="container-left__btns">
-            <button class="btn choose-option next-page">
+            <button data-option="Illianois" class="btn choose-option next-page">
               Illianois
               <img
                 id="skyscraper-icon"
@@ -70,7 +70,7 @@
                 alt="Skyscraper icon"
               />
             </button>
-            <button class="btn choose-option next-page">
+            <button data-option="Florida" class="btn choose-option next-page">
               Florida
               <img
                 width="110px"
@@ -80,7 +80,10 @@
                 class="animate__animated animate__swing"
               />
             </button>
-            <button class="btn choose-option next-page">
+            <button
+              data-option="Over the Road"
+              class="btn choose-option next-page"
+            >
               Over the Road
               <img
                 width="85px"
@@ -128,7 +131,7 @@
           </p>
 
           <div class="container-left__btns">
-            <button class="btn choose-option next-page">
+            <button data-option="Box truck" class="btn choose-option next-page">
               Box truck
               <img
                 class="veh-icons"
@@ -138,7 +141,10 @@
                 alt="Box truck icon"
               />
             </button>
-            <button class="btn choose-option next-page">
+            <button
+              data-option="Sprinter van"
+              class="btn choose-option next-page"
+            >
               Sprinter van
               <img
                 class="veh-icons"
@@ -148,7 +154,10 @@
                 alt="Palm trees icon"
               />
             </button>
-            <button class="btn choose-option next-page">
+            <button
+              data-option="Semi truck"
+              class="btn choose-option next-page"
+            >
               Semi truck
               <img
                 class="veh-icons"
@@ -389,7 +398,7 @@
         </div>
       </div>
       <div class="container-right forth-page-right">
-        <form action="submit">
+        <form>
           <div class="form-field">
             <label for="name-field">Name: *</label>
             <input
@@ -458,7 +467,7 @@
       <button><i class="fas fa-info"></i></button>
     </div>
     <div class="overlay hidden"></div>
-    <div id="company-info-container" class="hidden">
+    <div id="company-info-container" class="center-fixed hidden">
       <div id="header">
         <div>
           <img src="./src/img/website-logo.png" alt="AmCan logo" />
@@ -469,6 +478,18 @@
         </div>
       </div>
       <div id="company-info-body"></div>
+    </div>
+    <div class="overlay overlay-success hidden"></div>
+    <div class="success-message center-fixed hidden">
+      <div id="success-icon-container">
+        <i class="fas fa-4x fa-check"></i>
+      </div>
+      <h3>Sucessfully completed job application</h3>
+      <div></div>
+      <p>
+        We received your job application, you can expect us to contact you soon
+      </p>
+      <button id="finish-application" class="btn">Finish</button>
     </div>
     <button id="go-back-btn" class="btn">
       <i class="fas fa-lg fa-angle-left"></i>
